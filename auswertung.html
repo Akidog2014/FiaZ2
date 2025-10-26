@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auswertung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ergebnis der Auswertung</h1>
+        <div id="result" class="message"></div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Holen der Werte aus dem localStorage
+            const wert1 = parseFloat(localStorage.getItem('wert1'));
+            const wert2 = parseFloat(localStorage.getItem('wert2'));
+
+            // Überprüfen, ob beide Werte vorhanden sind
+            if (isNaN(wert1) || isNaN(wert2)) {
+                alert("Es wurden nicht alle Werte eingegeben!");
+                window.location.href = 'wert1.html';  // Zurück zu Seite 1
+                return;
+            }
+
+            const diff = Math.abs(wert1 - wert2);  // Differenz zwischen Wert 1 und Wert 2
+            let message = "";
+
+            // Bedingungen für die Weiterleitung basierend auf der Differenz
+            if (diff > 0.05) {
+                message = "Die Differenz der beiden Werte ist zu hoch. Es muss eine neue Testreihe durchgeführt werden.";
+                setTimeout(() => window.location.href = 'neue_testreihe.html', 3000);  // Weiterleitung zur Seite für neue Testreihe
+            } else {
+                const lowerValue = Math.min(wert1, wert2);  // Den kleineren der beiden Werte ermitteln
+                if (lowerValue >= 0 && lowerValue <= 0.04) {
+                    message = "Keine weiteren Maßnahmen erforderlich.";
+                    setTimeout(() => window.location.href = 'keine_weiterungen.html', 3000);  // Weiterleitung zur Seite "Keine weiteren Maßnahmen"
+                } else if (lowerValue >= 0.05 && lowerValue <= 0.39) {
+                    message = "FiaZ light.";
+                    setTimeout(() => window.location.href = 'fiaz_light.html', 3000);  // Weiterleitung zur Seite "FiaZ light"
+                } else if (lowerValue >= 0.4) {
+                    message = "FiaZ qualifiziert.";
+                    setTimeout(() => window.location.href = 'fiaz_qualifiziert.html', 3000);  // Weiterleitung zur Seite "FiaZ qualifiziert"
+                }
+            }
+
+            // Anzeige der Nachricht auf der Seite
+            document.getElementById('result').textContent = message;
+        };
+    </script>
+</body>
+</html>
