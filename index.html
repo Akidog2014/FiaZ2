@@ -3,138 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitte gewünschtes Vorgehen wählen:</title>
+    <title>Wird der tiefere Wert unterschriftlich akzeptiert?</title>
     <style>
+        /* Basis-Styles für die Seite */
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 20px;
             background-color: #f4f4f4;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
+            color: #333;
             text-align: center;
         }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
 
-        /* Breite für alle Haupt-Buttons gleich festlegen */
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Stil für die Buttons */
         button {
             padding: 10px 20px;
-            font-size: 18px;
-            margin: 10px;
-            cursor: pointer;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
             border: none;
             border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
-            width: 300px; /* Alle Haupt-Buttons gleich groß */
-            text-align: center;
-        }
-
-        /* Benutzerdefinierte Buttons mit Klassen */
-        .button1 {
-            background-color: #ff7f00; /* Orange */
-        }
-
-        .button2 {
-            background-color: #1874cd; /* Blau */
-        }
-
-        /* Info-Buttons kleiner machen */
-        .info-button {
-            background-color: #007BFF;
-            padding: 5px 10px;  /* Kleinerer Padding für Info-Button */
-            font-size: 16px;    /* Kleinere Schrift */
-            border-radius: 50%;
-            color: white;
             cursor: pointer;
-            width: 50px;        /* Feste Breite für Info-Button */
-            height: 50px;       /* Feste Höhe für Info-Button (rund) */
-            margin-left: 10px;
+            transition: background-color 0.3s ease;
         }
-
+        
         button:hover {
-            background-color: #45a049;
-        }
-
-        .info-button:hover {
             background-color: #0056b3;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Anpassung für kleinere Bildschirme */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            button {
+                width: 100%;
+                font-size: 18px;
+            }
         }
 
-	.footer-link {
-	    margin-top: 30px;
-	    text-align: center;
-	    font-size: 16px;
-	}
+        /* Container für die Buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;  /* Buttons zentrieren */
+            gap: 40px;  /* Abstand zwischen den Buttons */
+        }
 
-	.footer-link a {
-	    color: #007BFF;
-	    text-decoration: none;
-	}
-
-	.footer-link a:hover {
-	    text-decoration: underline;
-	}
+        /* Container für den Info-Button */
+        .info-button-container {
+            margin-top: 20px; /* Abstand nach den ersten Buttons */
+            display: flex;
+            justify-content: center;
+        }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Bitte gewünschtes Vorgehen wählen:</h1>
+        <h1>Wird der tiefere Wert unterschriftlich akzeptiert?</h1>
 
+        <!-- Ja/Nein Buttons werden angezeigt -->
         <div class="button-container">
-            <button onclick="goToPage('lenkergruppe1')">Lenkergruppe 1</button>
-            <button class="info-button" onclick="window.location.href='info_lenkergruppe_1.html'">i</button>
+            <button onclick="redirectTo('ja')">Ja</button>
+            <button onclick="redirectTo('nein')">Nein</button>
         </div>
 
-        <div class="button-container">
-            <button onclick="goToPage('lenkergruppe2')">Lenkergruppe 2</button>
-            <button class="info-button" onclick="window.location.href='info_lenkergruppe_2.html'">i</button>
+        <!-- Info-Button unterhalb der anderen Buttons -->
+        <div class="info-button-container">
+            <button onclick="redirectTo('info')">Info</button>
         </div>
-
-        <div class="button-container">
-            <button onclick="goToPage('lenkergruppe3')">Lenkergruppe 3</button>
-            <button class="info-button" onclick="window.location.href='info_lenkergruppe_3.html'">i</button>
-        </div>
-
-        <div class="button-container">
-            <button class="button1" onclick="goToPage('atemluftverweigert')">Atemlufttest wird verweigert</button>
-        </div>
-
-        <div class="button-container">
-            <button class="button2" onclick="goToPage('nachtrunk')">Es wird Nachtrunk geltend gemacht</button>
-        </div>
-        
-        <div class="footer-link">
-            <br><a href="https://www.fedlex.admin.ch/eli/cc/2007/296/de">SKV öffnen</a></br>
-	    <br><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.astra.admin.ch/dam/astra/de/dokumente/dokumente-strassenverkehr/weisungen/fesstellung-	   			fahrunfaehigkeit.pdf.download.pdf/Weisungen%2520vom%25202.%2520August%25202016%2520betreffend%2520die%2520Feststellung%2520der%2520Fahrunf%25C3%25A4higkeit%2520im%2520Strassenverkehr.pdf&ved=	2ahUKEwjluYXrhbeQAxUi9bsIHeGFGTwQFnoECBsQAQ&usg=AOvVaw3vIi_vsBMDOeczYSfWG8XY">Merkblatt ASTRA downloaden</a></br>
-	</div>
-
     </div>
 
-
     <script>
-        function goToPage(response) {
-            if (response === 'lenkergruppe1') {
-                window.location.href = 'verdacht_2h_frage_l1.html';
-            } else if (response === 'lenkergruppe2') {
-                window.location.href = 'verdacht_2h_frage.html';
-            } else if (response === 'lenkergruppe3') {
-                window.location.href = 'verdacht_2h_frage_l3.html';
-            } else if (response === 'atemluftverweigert') {
-                window.location.href = 'verweigerung.html';
-            } else if (response === 'nachtrunk') {
-                window.location.href = 'nachtrunk.html';
+        function redirectTo(answer) {
+            if (answer === 'ja') {
+                window.location.href = 'wertjal1c.html';  // Weiterleitung zur Seite für "Ja"
+            } else if (answer === 'nein') {
+                window.location.href = 'wertneinl1c.html';  // Weiterleitung zur Seite für "Nein"
+            } else if (answer === 'info') {
+                alert("Hier könnte Ihre Info stehen!");  // Beispiel für Info-Button
             }
         }
     </script>
