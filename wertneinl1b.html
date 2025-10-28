@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wert wird akzeptiert L1</title>
+    <style>
+        /* Basis-Styles für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Stil für den Zurück-Button */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Anpassung für kleinere Bildschirme */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            button {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+
+        /* Stil für die fettgedruckten Werte */
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Text-Bereich oberhalb der Buttons -->
+    <div class="text-container">
+        <h1>Dem Lenker sind die rechtlichen Möglichkeiten aufzuzeigen.</h1>
+        <p>Der Lenker hat folgende Möglichkeiten:</p>
+    </div>
+
+    <div class="container">
+        <button onclick="window.location.href='atemluftb.html'">Beweissicherer Atemlufttest</button>
+        <button onclick="window.location.href='Blutprobeb.html'">Der Beschuldigte verlangt Blutprobe oder verweigert den Test am Messgerät</button>
+        <button onclick="window.location.href='nichtmoeglichb.html'">Durchführung nicht möglich (wenig Atemluft / medizinisch)</button>
+    </div>
+
+</body>
+</html>
