@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wert 1 eingeben</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 18px;
+            margin: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wert 1 eingeben:</h1>
+        <input type="number" id="wert1" placeholder="Wert 1" step="0.01" min="0">
+        <button onclick="saveWert1()">Wert einlesen</button>
+    </div>
+
+    <script>
+        function saveWert1() {
+            const wert1 = parseFloat(document.getElementById('wert1').value);
+            
+            // Prüfen, ob der Wert eine gültige Zahl ist und nicht leer
+            if (!isNaN(wert1) && wert1 !== "") {
+                localStorage.setItem('wert1', wert1);  // Speichern des Wertes 1
+                window.location.href = 'wert2b.html';  // Weiterleitung zu Seite 2
+            } else {
+                alert('Bitte einen gültigen Wert eingeben!');
+            }
+        }
+    </script>
+</body>
+</html>
