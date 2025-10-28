@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdacht 2h Frage</title>
+    <style>
+        /* Basis-Styles für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Stil für den Zurück-Button */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Anpassung für kleinere Bildschirme */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            button {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Besteht der Verdacht, dass die betroffene Person zwei Stunden oder mehr vor der Kontrolle ein Fahrzeug gelenkt hat?</h1>
+
+        <!-- Ja/Nein Buttons werden angezeigt -->
+        <div>
+            <button onclick="redirectTo('ja')">Ja</button>
+            <button onclick="redirectTo('nein')">Nein</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectTo(answer) {
+            if (answer === 'ja') {
+                window.location.href = 'verdacht_2h_ja.html';  // Weiterleitung zur Seite für "Ja"
+            } else if (answer === 'nein') {
+                window.location.href = 'wert1.html';  // Weiterleitung zur Seite für "Nein"
+            }
+        }
+    </script>
+</body>
+</html>
