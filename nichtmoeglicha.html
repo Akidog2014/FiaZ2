@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wert wird akzeptiert L1</title>
+    <style>
+        /* Basis-Styles für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Stil für den Zurück-Button */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Anpassung für kleinere Bildschirme */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            button {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+
+        /* Stil für die fettgedruckten Werte */
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p>Massnahmen:</p>
+    <h1>Blutprobe veranlassen.</h1>
+    <p>Staatsanwaltschaft <strong>muss</strong> Blutprobe verfügen.</p>
+    <h1>FiaZ Formular 1 und 2 ausfüllen</h1>
+    <h1>Keine Abnahme des Führerausweises</h1>
+    <h1>Weiterfahrt verhindern</h1>
+
+    <!-- Hier wird der tiefere Wert angezeigt -->
+    <p id="wert1">Wert 1 beträgt: <span id="wert1Value" class="bold"></span> <span class="bold">mg/l</span></p>
+    <p id="wert2">Wert 2 beträgt: <span id="wert2Value" class="bold"></span> <span class="bold">mg/l</span></p>
+
+    <h2> Fahren unter Alkoholeinfluss (Übertretung)</h2>
+
+    <!-- Zurück-Button -->
+    <a href="index.html">
+        <button>Zurück zur Startseite</button>
+    </a>
+
+    <script>
+        // Auslesen der gespeicherten Werte aus localStorage
+        const wert1 = parseFloat(localStorage.getItem('wert1'));
+        const wert2 = parseFloat(localStorage.getItem('wert2'));
+
+        // Anzeigen des kleineren Wertes auf der Seite (nur der Wert selbst wird fett)
+        document.getElementById('wert1Value').textContent = wert1;
+        document.getElementById('wert2Value').textContent = wert2;
+    </script>
+
+</body>
+</html>
