@@ -13,11 +13,16 @@
             background-color: #f4f4f4;
             color: #333;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Vollbildhöhe */
         }
         
         h1 {
             font-size: 24px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         p {
@@ -26,16 +31,19 @@
             margin-bottom: 20px;
         }
 
-        /* Stil für den Zurück-Button */
+        /* Stil für den Button */
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 80%; /* Buttons nehmen 80% der Breite ein */
+            max-width: 300px; /* Maximale Breite der Buttons */
+            margin-bottom: 15px; /* Abstand zwischen den Buttons */
         }
         
         button:hover {
@@ -53,7 +61,7 @@
             }
             
             button {
-                width: 100%;
+                width: 90%; /* Buttons breiter auf mobilen Geräten */
                 font-size: 18px;
             }
         }
@@ -63,11 +71,9 @@
     <div class="container">
         <h1>Besteht der Verdacht, dass die betroffene Person zwei Stunden oder mehr vor der Kontrolle ein Fahrzeug gelenkt hat?</h1>
 
-        <!-- Ja/Nein Buttons werden angezeigt -->
-        <div>
-            <button onclick="redirectTo('ja')">Ja</button>
-            <button onclick="redirectTo('nein')">Nein</button>
-        </div>
+        <!-- Ja/Nein Buttons untereinander angeordnet -->
+        <button onclick="redirectTo('ja')">Ja</button>
+        <button onclick="redirectTo('nein')">Nein</button>
     </div>
 
     <script>
