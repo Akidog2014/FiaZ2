@@ -13,31 +13,39 @@
             background-color: #f4f4f4;
             color: #333;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Vollbildhöhe */
+            flex-direction: column;
         }
-        
+
         h1 {
             font-size: 24px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        
+
         p {
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 20px;
         }
 
-        /* Stil für den Zurück-Button */
+        /* Stil für die Buttons */
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 80%; /* Breite der Buttons */
+            max-width: 300px; /* Maximale Breite der Buttons */
+            margin-bottom: 15px; /* Abstand zwischen den Buttons */
         }
-        
+
         button:hover {
             background-color: #0056b3;
         }
@@ -51,30 +59,26 @@
             p {
                 font-size: 14px;
             }
-            
+
             button {
-                width: 100%;
+                width: 90%; /* Buttons breiter auf mobilen Geräten */
                 font-size: 18px;
             }
-        }
-
-        /* Container für die Buttons */
-        div {
-            display: flex;
-            justify-content: center;  /* Buttons zentrieren */
-            gap: 40px;  /* Abstand zwischen den Buttons vergrößert */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Wird der tiefere Wert unterschriftlich akzeptiert?</h1>
 
-        <!-- Ja/Nein Buttons werden angezeigt -->
-        <div>
-            <button onclick="redirectTo('ja')">Ja</button>
-            <button onclick="redirectTo('nein')">Nein</button>
-        </div>
+    <!-- Text-Bereich oberhalb der Buttons -->
+    <div class="text-container">
+        <h1>Wird der tiefere Wert unterschriftlich akzeptiert?</h1>
+        <p>Bitte wählen Sie eine der Optionen:</p>
+    </div>
+
+    <!-- Buttons untereinander anordnen -->
+    <div class="container">
+        <button onclick="redirectTo('ja')">Ja</button>
+        <button onclick="redirectTo('nein')">Nein</button>
     </div>
 
     <script>
