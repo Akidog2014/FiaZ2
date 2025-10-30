@@ -15,9 +15,10 @@
             background-color: #f4f4f4;
         }
         .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
             text-align: center;
         }
 
@@ -44,7 +45,7 @@
             background-color: #1874cd; /* Blau */
         }
 
-        /* Info-Buttons kleiner machen */
+        /* Info-Buttons kleiner machen und nach rechts verschieben */
         .info-button {
             background-color: #007BFF;
             padding: 5px 10px;  /* Kleinerer Padding für Info-Button */
@@ -54,7 +55,7 @@
             cursor: pointer;
             width: 50px;        /* Feste Breite für Info-Button */
             height: 50px;       /* Feste Höhe für Info-Button (rund) */
-            margin-left: 10px;
+            margin-left: 15px;  /* Abstand zum Button */
         }
 
         button:hover {
@@ -65,26 +66,21 @@
             background-color: #0056b3;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Footer-Link */
+        .footer-link {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 16px;
         }
 
-	.footer-link {
-	    margin-top: 30px;
-	    text-align: center;
-	    font-size: 16px;
-	}
+        .footer-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
 
-	.footer-link a {
-	    color: #007BFF;
-	    text-decoration: none;
-	}
-
-	.footer-link a:hover {
-	    text-decoration: underline;
-	}
+        .footer-link a:hover {
+            text-decoration: underline;
+        }
 
     </style>
 </head>
@@ -92,6 +88,7 @@
     <div class="container">
         <h1>Bitte gewünschtes Vorgehen wählen:</h1>
 
+        <!-- Button mit Info-Button daneben -->
         <div class="button-container">
             <button onclick="goToPage('lenkergruppe1')">Lenkergruppe 1</button>
             <button class="info-button" onclick="window.location.href='info_lenkergruppe_1.html'">i</button>
@@ -117,10 +114,8 @@
         
         <div class="footer-link">
             <br><a href="https://www.fedlex.admin.ch/eli/cc/2007/296/de">SKV öffnen</a></br>
-	</div>
-
+        </div>
     </div>
-
 
     <script>
         function goToPage(response) {
