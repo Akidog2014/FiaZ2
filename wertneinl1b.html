@@ -41,6 +41,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 100%; /* Buttons nehmen 100% der Breite ein */
+            margin-bottom: 15px; /* Abstand zwischen den Buttons */
         }
         
         button:hover {
@@ -58,7 +60,6 @@
             }
             
             button {
-                width: 100%;
                 font-size: 18px;
             }
         }
@@ -77,6 +78,7 @@
         <p>Der Lenker hat folgende Möglichkeiten:</p>
     </div>
 
+    <!-- Container für die Buttons -->
     <div class="container">
         <button onclick="window.location.href='atemluftb.html'">Beweissicherer Atemlufttest</button>
         <button onclick="window.location.href='Blutprobeb.html'">Der Beschuldigte verlangt Blutprobe oder verweigert den Test am Messgerät</button>
