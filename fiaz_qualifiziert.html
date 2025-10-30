@@ -14,12 +14,12 @@
             color: #333;
             text-align: center;
         }
-        
+
         h1 {
             font-size: 24px;
             margin-bottom: 15px;
         }
-        
+
         h2 {
             font-size: 30px;
             margin-bottom: 15px;
@@ -33,14 +33,16 @@
 
         /* Stil für den Zurück-Button */
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 100%; /* Buttons nehmen die volle Breite ein */
+            margin-bottom: 15px; /* Abstand zwischen den Buttons */
         }
         
         button:hover {
@@ -58,8 +60,7 @@
             }
             
             button {
-                width: 100%;
-                font-size: 18px;
+                font-size: 18px; /* Größere Schrift auf mobilen Geräten */
             }
         }
 
@@ -69,10 +70,13 @@
         }
 
         /* Container für die Buttons */
-        div {
-            display: flex;
-            justify-content: center; /* Buttons zentrieren */
-            gap: 40px;  /* Abstand zwischen den Buttons vergrößert */
+        .container {
+            max-width: 400px; /* Maximale Breite der Buttons */
+            margin: 0 auto; /* Zentriert die Buttons */
+        }
+
+        .text-container {
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -84,6 +88,7 @@
         <p>Der Lenker hat folgende Möglichkeiten:</p>
     </div>
 
+    <!-- Buttons untereinander anordnen -->
     <div class="container">
         <button onclick="window.location.href='atemluftc.html'">Beweissicherer Atemlufttest mit Messgerät</button>
         <button onclick="window.location.href='Blutprobec.html'">Der Beschuldigte verlangt Blutprobe oder verweigert den Test am Messgerät</button>
