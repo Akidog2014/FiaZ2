@@ -45,9 +45,17 @@
         }
 
         p {
-            font-size: 16px;
+            font-size: 20px; /* Gleiche Schriftgröße wie die Aufzählung */
             line-height: 1.5;
             margin-bottom: 20px;
+            text-align: left;  /* Damit der Text links ausgerichtet ist */
+            display: inline-block; /* Damit der Text blockweise angezeigt wird */
+            width: 100%; /* Damit die komplette Breite ausgenutzt wird */
+        }
+
+        /* Stil für das fettgedruckte Wort "Bemerkung" */
+        .bold-remark {
+            font-weight: bold;
         }
 
         /* Stil für die fettgedruckten Werte */
@@ -78,7 +86,7 @@
 
         .wert-box span {
             display: inline;
-	    margin-right: 5px;
+            margin-right: 5px;
         }
 
         /* Stil für den Zurück-Button */
@@ -128,16 +136,16 @@
 
     <!-- Aufzählung der Maßnahmen -->
     <ul>
-	<li>Beweissicherer Atemlufttest durchführen</li>
-	<li>Unterschrift auf Ausdruck nicht zwingend</li>
-	<li>FiaZ Formular 1 ausfüllen</li>
-	<li>Finanzielle Verhältnisse erheben</li>
+        <li>Beweissicherer Atemlufttest durchführen</li>
+        <li>Unterschrift auf Ausdruck nicht zwingend</li>
+        <li>FiaZ Formular 1 ausfüllen</li>
+        <li>Finanzielle Verhältnisse erheben</li>
         <li>Abnahme des Führerausweises mit dem Formular</li>
         <li>Weiterfahrt verhindern</li>
     </ul>
 
-	<p><strong>Bemerkung:</strong>Sollte der Atemalkoholwert bei der Atemalkoholprobe mit Messgerät unter den Wert von 0.40mg/l fallen, ist das Vorgehen FiaZ light zu wählen. Der FA wird in diesem Fall nicht abgenommen.</p>
-	
+    <p><span class="bold-remark">Bemerkung:</span> Sollte der Atemalkoholwert bei der Atemalkoholprobe mit Messgerät unter den Wert von 0.40mg/l fallen, ist das Vorgehen FiaZ light zu wählen. Der FA wird in diesem Fall nicht abgenommen.</p>
+    
     <!-- Container für die Werte -->
     <div class="wert-container">
         <div class="wert-box">
