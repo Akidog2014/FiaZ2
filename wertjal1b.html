@@ -12,23 +12,73 @@
             padding: 20px;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             text-align: center;
         }
-        
+
         h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: bold;  /* Fett für den Haupttitel */
+        }
+
+        h2 {
             font-size: 24px;
             margin-bottom: 15px;
+            font-weight: bold;  /* Fett für den Untertitel */
         }
-        
-        h2 {
-            font-size: 30px;
-            margin-bottom: 15px;
+
+        ul {
+            list-style-type: disc;  /* Aufzählungszeichen */
+            text-align: left;
+            font-size: 20px;
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
         }
 
         p {
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 20px;
+        }
+
+        /* Stil für die fettgedruckten Werte */
+        .bold {
+            font-weight: bold;
+        }
+
+        /* Stil für die beiden Werte im Rahmen (jetzt untereinander) */
+        .wert-container {
+            display: flex;
+            flex-direction: column; /* Ändern von row zu column, damit die Boxen untereinander erscheinen */
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .wert-box {
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #fff;
+            width: 250px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .wert-box span {
+            display: inline;
+	    margin-right: 5px;
         }
 
         /* Stil für den Zurück-Button */
@@ -50,36 +100,52 @@
         /* Anpassung für kleinere Bildschirme */
         @media (max-width: 600px) {
             h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
                 font-size: 20px;
             }
-            
-            p {
-                font-size: 14px;
+
+            ul {
+                font-size: 16px;
             }
-            
+
+            .wert-box {
+                width: 130px;
+                font-size: 16px;
+            }
+
             button {
                 width: 100%;
                 font-size: 18px;
             }
         }
-
-        /* Stil für die fettgedruckten Werte */
-        .bold {
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
-    <p>Massnahmen:</p>
-    <h1>FiaZ Formular 1 ausfüllen</h1>
-    <h1>Keine Abnahme des Führerausweises</h1>
-    <h1>Weiterfahrt verhindern</h1>
+    <h2>FiaZ light (Übertretung)</h2>
 
-    <!-- Hier wird der tiefere Wert angezeigt -->
-    <p id="wert1">Wert 1 beträgt: <span id="wert1Value" class="bold"></span> <span class="bold">mg/l</span></p>
-    <p id="wert2">Wert 2 beträgt: <span id="wert2Value" class="bold"></span> <span class="bold">mg/l</span></p>
+    <!-- Aufzählung der Maßnahmen -->
+    <ul>
+	<li>FiaZ Formular 1 ausfüllen</li>
+        <li>Keine Abnahme des Führerausweises</li>
+        <li>Weiterfahrt verhindern</li>
+    </ul>
 
-    <h2> FiaZ light (Übertretung)</h2>
+    <a href="https://www.fedlex.admin.ch/eli/cc/2007/296/de">Zum Gesetz wechseln</a>
+
+    <!-- Container für die Werte -->
+    <div class="wert-container">
+        <div class="wert-box">
+            <span>Wert 1 beträgt:</span>
+            <span id="wert1Value" class="bold"></span> <span class="bold">mg/l</span>
+        </div>
+        <div class="wert-box">
+            <span>Wert 2 beträgt:</span>
+            <span id="wert2Value" class="bold"></span> <span class="bold">mg/l</span>
+        </div>
+    </div>
 
     <!-- Zurück-Button -->
     <a href="index.html">
@@ -91,10 +157,9 @@
         const wert1 = parseFloat(localStorage.getItem('wert1'));
         const wert2 = parseFloat(localStorage.getItem('wert2'));
 
-        // Anzeigen des kleineren Wertes auf der Seite (nur der Wert selbst wird fett)
+        // Anzeigen der Werte auf der Seite
         document.getElementById('wert1Value').textContent = wert1;
         document.getElementById('wert2Value').textContent = wert2;
     </script>
-
 </body>
 </html>
